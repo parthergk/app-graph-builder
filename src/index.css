@@ -3,6 +3,12 @@
 @theme {
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  
+  --color-bg-dark: #08080a;
+  --color-bg-panel: #0d0d0f;
+  --color-bg-active: #18181b;
+  --color-border-dark: #1f1f23;
+  --color-text-muted: #8e9196;
 }
 
 @layer base {
