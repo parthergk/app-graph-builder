@@ -1,30 +1,26 @@
-import { Bell, Box, Layers, LineChart, Plus, Search, ShoppingCart } from "lucide-react";
+import { Plus, Search } from "lucide-react";
 import { useState } from "react";
+import { useApps } from "../../hooks/useApps";
+import { appIcons } from "../../constants/appIcons";
+import { AppErrorState } from "./AppErrorState";
+import { AppSkeletonList } from "./AppSkeletonList";
 
-interface AppItem {
-    id: string;
-    name: string;
-    icon: React.ComponentType<{ className?: string }>;
-    status: 'healthy' | 'warning' | 'error' | 'inactive';
-}
 
 const AppPanel = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedAppId, setSelectedAppId] = useState('payments');
 
-    const apps: AppItem[] = [
-        { id: 'payments', name: 'Payments', icon: Layers, status: 'healthy' },
-        { id: 'analytics', name: 'Analytics', icon: LineChart, status: 'healthy' },
-        { id: 'ecommerce', name: 'Ecommerce', icon: ShoppingCart, status: 'healthy' },
-        { id: 'inventory', name: 'Inventory', icon: Box, status: 'healthy' },
-        { id: 'notification', name: 'Notification', icon: Bell, status: 'healthy' },
-    ];
-    const filteredApps = apps.filter((app) =>
+    const { data, isLoading, error } = useApps();
+   
+    const displayLoading = isLoading
+    const displayError = error
+
+    const filteredApps = data?.filter((app) =>
         app.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
     return (
-        <div className="w-64 h-full bg-bg-panel flex flex-col justify-between p-4">
+        <div className="w-64 h-full bg-bg-panel flex flex-col justify-between p-4 border-l border-border-dark">
             <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
                     <h2 className="text-white font-sans font-semibold text-[15px]">
@@ -47,9 +43,13 @@ const AppPanel = () => {
                 </div>
 
                 <div className="flex flex-col gap-1.5 mt-2">
-                    {filteredApps.length > 0 ? (
+                    {displayError ? (
+                        <AppErrorState/>
+                    ) : displayLoading ? (
+                        <AppSkeletonList />
+                    ) : filteredApps && filteredApps.length > 0 ? (
                         filteredApps.map((app) => {
-                            const Icon = app.icon;
+                            const Icon = appIcons[app.type];
                             const isActive = app.id === selectedAppId;
                             return (
                                 <button
@@ -80,7 +80,7 @@ const AppPanel = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default AppPanel
+export default AppPanel;
