@@ -2,7 +2,7 @@ import { useState } from 'react';
 import TopBar from './components/layout/TopBar';
 import LeftRail from './components/layout/LeftRail';
 import CanvasTopBar from './components/canvas/TopBar';
-
+import AppPanel from './components/apps/AppPanel';
 
 function App() {
   const [activeCanvasTool, setActiveCanvasTool] = useState('pointer');
@@ -36,6 +36,7 @@ function App() {
           </div>
           <CanvasTopBar setActiveCanvasTool={setActiveCanvasTool} activeCanvasTool={activeCanvasTool} setZoomPercent={setZoomPercent} zoomPercent={zoomPercent}/>
         </main>
+        <AppPanel/>
       </div>
     </div>
   );

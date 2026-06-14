@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Maximize2, Moon, Settings, ChevronRight } from 'lucide-react';
+import { Menu, Maximize2, Moon, ChevronRight } from 'lucide-react';
 
 interface TopBarProps {
   onMenuToggle?: () => void;
