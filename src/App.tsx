@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import TopBar from './components/layout/TopBar';
 import LeftRail from './components/layout/LeftRail';
-import CanvasTopBar from './components/canvas/TopBar';
-import AppPanel from './components/apps/AppPanel';
+import CanvasControls from './components/canvas/CanvasControls';
+import { NodeGraph } from './components/canvas/NodeGraph';
+import RightPanel from './components/layout/RightPanel';
 
 function App() {
   const [activeCanvasTool, setActiveCanvasTool] = useState('pointer');
@@ -21,7 +22,7 @@ function App() {
       />
 
       <div className="flex-1 flex overflow-hidden">
-        <LeftRail/>
+        <LeftRail />
 
         {/* Center Canvas Viewport */}
         <main
@@ -31,12 +32,15 @@ function App() {
             backgroundSize: '20px 20px',
           }}
         >
-          <div style={{transform: `scale(${zoomPercent / 100})`}}>
-          hwoodd
+          <div
+            className=" w-full h-full transition-transform duration-300"
+            style={{ transform: `scale(${zoomPercent / 100})` }}
+          >
+            <NodeGraph />
           </div>
-          <CanvasTopBar setActiveCanvasTool={setActiveCanvasTool} activeCanvasTool={activeCanvasTool} setZoomPercent={setZoomPercent} zoomPercent={zoomPercent}/>
+          <CanvasControls setActiveCanvasTool={setActiveCanvasTool} activeCanvasTool={activeCanvasTool} setZoomPercent={setZoomPercent} zoomPercent={zoomPercent} />
         </main>
-        <AppPanel/>
+        <RightPanel />
       </div>
     </div>
   );

@@ -96,3 +96,16 @@
   animation: float-reverse 7s ease-in-out infinite;
   animation-delay: 1s;
 }
+
+@keyframes edgeFlow {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-edge-flow {
+  animation: edgeFlow 1.2s linear infinite;
+}

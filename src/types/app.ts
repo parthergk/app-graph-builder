@@ -4,3 +4,4 @@ export interface AppItem {
  type: "layers" | "chart" | "cart" | "box" | "bell";
   status: 'healthy' | 'warning' | 'error' | 'inactive';
 }
+

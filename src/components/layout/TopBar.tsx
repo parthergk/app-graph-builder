@@ -12,7 +12,6 @@ export const TopBar: React.FC<TopBarProps> = ({
   onMenuToggle,
   onFitView,
   onToggleTheme,
-  onSettingsClick,
 }) => {
   return (
     <header className="w-full h-16 bg-bg-panel border-b border-border-dark flex items-center justify-between px-6 select-none z-50">
