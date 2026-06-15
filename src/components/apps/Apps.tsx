@@ -24,7 +24,7 @@ const Apps = () => {
     return (
         <div className="flex flex-col gap-4">
             <div className="flex items-center justify-between">
-                <h2 className="text-white font-sans font-semibold text-[15px]">
+                <h2 className="text-white font-sans font-semibold text-base">
                     Applications
                 </h2>
                 <button className="flex items-center gap-1 px-2.5 py-1 rounded-lg border border-border-dark hover:bg-bg-active text-white text-[11px] font-medium transition-all cursor-pointer">

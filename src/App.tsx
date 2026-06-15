@@ -30,9 +30,8 @@ function App() {
         >
           <div
             className=" w-full h-full transition-transform duration-300"
-            style={{ transform: `scale(${zoomPercent / 100})` }}
           >
-            <NodeGraph />
+            <NodeGraph zoomPercent={zoomPercent} />
           </div>
           <CanvasControls setZoomPercent={setZoomPercent} zoomPercent={zoomPercent} />
         </main>

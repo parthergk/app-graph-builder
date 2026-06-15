@@ -10,7 +10,14 @@ export const appGraphs: AppGraphs = {
         data: {
           label: "Service A",
           status: "healthy",
-          capacity: "60%",
+          capacity: 60,
+          description: "Handles incoming payment requests.",
+          runtime: {
+            cpu: 42,
+            memory: 58,
+            uptime: "2d 14h",
+            lastUpdated: "2 mins ago",
+          },
         },
       },
       {
@@ -20,7 +27,14 @@ export const appGraphs: AppGraphs = {
         data: {
           label: "Service B",
           status: "degraded",
-          capacity: "75%",
+          capacity: 75,
+          description: "Processes payment transactions.",
+          runtime: {
+            cpu: 81,
+            memory: 73,
+            uptime: "8h 30m",
+            lastUpdated: "1 min ago",
+          },
         },
       },
       {
@@ -30,7 +44,14 @@ export const appGraphs: AppGraphs = {
         data: {
           label: "Database",
           status: "down",
-          capacity: "40%",
+          capacity: 40,
+          description: "Stores payment records.",
+          runtime: {
+            cpu: 0,
+            memory: 0,
+            uptime: "Offline",
+            lastUpdated: "15 mins ago",
+          },
         },
       },
     ],
@@ -59,7 +80,14 @@ export const appGraphs: AppGraphs = {
         data: {
           label: "Data Collector",
           status: "healthy",
-          capacity: "45%",
+          capacity: 45,
+          description: "Collects event data from services.",
+          runtime: {
+            cpu: 35,
+            memory: 40,
+            uptime: "5d 2h",
+            lastUpdated: "Just now",
+          },
         },
       },
       {
@@ -69,7 +97,14 @@ export const appGraphs: AppGraphs = {
         data: {
           label: "Aggregator",
           status: "healthy",
-          capacity: "80%",
+          capacity: 80,
+          description: "Aggregates and transforms analytics events.",
+          runtime: {
+            cpu: 72,
+            memory: 68,
+            uptime: "3d 8h",
+            lastUpdated: "30 sec ago",
+          },
         },
       },
       {
@@ -79,7 +114,14 @@ export const appGraphs: AppGraphs = {
         data: {
           label: "Data Warehouse",
           status: "healthy",
-          capacity: "50%",
+          capacity: 50,
+          description: "Stores processed analytics data.",
+          runtime: {
+            cpu: 28,
+            memory: 52,
+            uptime: "10d 6h",
+            lastUpdated: "5 mins ago",
+          },
         },
       },
     ],
@@ -108,7 +150,14 @@ export const appGraphs: AppGraphs = {
         data: {
           label: "Web Frontend",
           status: "healthy",
-          capacity: "30%",
+          capacity: 30,
+          description: "Customer-facing ecommerce application.",
+          runtime: {
+            cpu: 22,
+            memory: 37,
+            uptime: "7d 4h",
+            lastUpdated: "1 min ago",
+          },
         },
       },
       {
@@ -118,7 +167,14 @@ export const appGraphs: AppGraphs = {
         data: {
           label: "Cart Service",
           status: "degraded",
-          capacity: "90%",
+          capacity: 90,
+          description: "Handles shopping cart operations.",
+          runtime: {
+            cpu: 91,
+            memory: 84,
+            uptime: "12h",
+            lastUpdated: "20 sec ago",
+          },
         },
       },
       {
@@ -128,7 +184,14 @@ export const appGraphs: AppGraphs = {
         data: {
           label: "Redis Cache",
           status: "healthy",
-          capacity: "15%",
+          capacity: 15,
+          description: "Caches frequently requested data.",
+          runtime: {
+            cpu: 10,
+            memory: 18,
+            uptime: "15d 9h",
+            lastUpdated: "Just now",
+          },
         },
       },
       {
@@ -138,7 +201,14 @@ export const appGraphs: AppGraphs = {
         data: {
           label: "SQL Orders DB",
           status: "healthy",
-          capacity: "65%",
+          capacity: 65,
+          description: "Stores order information.",
+          runtime: {
+            cpu: 46,
+            memory: 60,
+            uptime: "20d 11h",
+            lastUpdated: "3 mins ago",
+          },
         },
       },
     ],

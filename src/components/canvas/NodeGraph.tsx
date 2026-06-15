@@ -3,42 +3,45 @@ import {
   ReactFlow,
   useEdgesState,
   useNodesState,
-  type Node,
   type Edge,
 } from "@xyflow/react";
+import type { ServiceNode } from "@/types/graph";
 import "@xyflow/react/dist/style.css";
 import { useBuilderStore } from "../../store/useBuilderStore";
-import { ServiceNode } from "./nodes/ServiceNode";
+import { ServiceNode as ServiceNodeComponent } from "./nodes/ServiceNode";
 import { useGraph } from "../../hooks/useGraph";
 import { NodeGraphSkeleton } from "./nodes/NodeGraphSkeleton";
 import { NodeGraphError } from "./nodes/NodeGraphError";
 
 const nodeTypes = {
-  serviceNode: ServiceNode,
+  serviceNode: ServiceNodeComponent,
 };
 
 
-export function NodeGraph() {
+export function NodeGraph({zoomPercent}) {
+  const setGraphNode = useBuilderStore((state)=> state.setGraphNodes);
   const setSelectedNodeId = useBuilderStore((state) => state.setSelectedNodeId);
   const activeTool = useBuilderStore((state) => state.activeTool);
   const selectedAppId = useBuilderStore((state) => state.selectedAppId);
   const { data, isLoading, error } = useGraph(selectedAppId);
 
 
-  const [nodes, setNodes, onNodesChange] = useNodesState<Node>([]);
+  const [nodes, setNodes, onNodesChange] = useNodesState<ServiceNode>([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
 
   useEffect(() => {
     if (data) {
       setNodes(data.nodes || []);
       setEdges(data.connections || []);
+      setGraphNode(data.nodes)
+
     } else {
       setNodes([]);
       setEdges([]);
     }
   }, [data, setNodes, setEdges]);
 
-  const handleNodeClick = (_: React.MouseEvent, node: Node) => {
+  const handleNodeClick = (_: React.MouseEvent, node: ServiceNode) => {
     setSelectedNodeId(node.id);
   };
 
@@ -53,8 +56,9 @@ export function NodeGraph() {
   }
 
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full" style={{ transform: `scale(${zoomPercent / 100})` }}>
       <ReactFlow
+      
         className={
           activeTool === "hand"
             ? "hand-mode"
