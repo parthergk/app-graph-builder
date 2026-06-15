@@ -4,23 +4,24 @@ import LeftRail from './components/layout/LeftRail';
 import CanvasControls from './components/canvas/CanvasControls';
 import { NodeGraph } from './components/canvas/NodeGraph';
 import RightPanel from './components/layout/RightPanel';
+import { useBuilderStore } from './store/useBuilderStore';
 
 function App() {
   const [zoomPercent, setZoomPercent] = useState(100);
+  const isMobilePanelOpen = useBuilderStore((state) => state.isMobilePanelOpen);
+  const setIsMobilePanelOpen = useBuilderStore((state) => state.setIsMobilePanelOpen);
 
   return (
     <div className="w-screen h-screen flex flex-col bg-bg-dark text-zinc-100 font-sans overflow-hidden">
       <TopBar
-        onMenuToggle={() => console.log('Menu Toggled')}
+        onMenuToggle={() => setIsMobilePanelOpen(!isMobilePanelOpen)}
         onFitView={() => setZoomPercent(100)}
         onToggleTheme={() => console.log('Toggle Theme')}
-        onSettingsClick={() => console.log('Settings Clicked')}
       />
 
       <div className="flex-1 flex overflow-hidden">
         <LeftRail />
-
-        {/* Center Canvas Viewport */}
+        
         <main
           className="flex-1 relative flex flex-col justify-center items-center overflow-hidden"
           style={{
@@ -28,13 +29,10 @@ function App() {
             backgroundSize: '20px 20px',
           }}
         >
-          <div
-            className=" w-full h-full transition-transform duration-300"
-          >
             <NodeGraph zoomPercent={zoomPercent} setZoomPercent={setZoomPercent} />
-          </div>
           <CanvasControls setZoomPercent={setZoomPercent} zoomPercent={zoomPercent} />
         </main>
+
         <RightPanel />
       </div>
     </div>

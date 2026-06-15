@@ -63,7 +63,7 @@ export const TopBar: React.FC<TopBarProps> = ({
        {/* Menu/Hamburger toggle */}
         <button
           onClick={onMenuToggle}
-          className="text-text-muted hover:text-white transition-colors duration-200 cursor-pointer"
+          className="text-text-muted hover:text-white transition-colors duration-200 cursor-pointer lg:hidden"
           aria-label="Toggle Menu"
         >
           <Menu className="w-6 h-6" />

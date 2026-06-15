@@ -43,10 +43,14 @@ export function NodeGraph({ zoomPercent, setZoomPercent }: { zoomPercent: number
   }, [data, setNodes, setEdges]);
 
   useEffect(() => {
-    if (reactFlowInstance) {
-      reactFlowInstance.zoomTo(zoomPercent / 100)
-    }
-  }, [zoomPercent, reactFlowInstance]);
+  if (!reactFlowInstance) return;
+
+  const currentZoom = reactFlowInstance.getZoom();
+
+  if (Math.abs(currentZoom - zoomPercent / 100) > 0.01) {
+    reactFlowInstance.zoomTo(zoomPercent / 100);
+  }
+}, [zoomPercent, reactFlowInstance]);
 
   const handleNodeClick = (_: React.MouseEvent, node: ServiceNode) => {
     setSelectedNodeId(node.id);
@@ -63,7 +67,7 @@ export function NodeGraph({ zoomPercent, setZoomPercent }: { zoomPercent: number
   }
 
   return (
-    <div className="h-full w-full">
+    <div className=" ">
       <ReactFlow
         className={
           activeTool === "hand"
