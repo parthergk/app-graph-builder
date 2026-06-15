@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   ReactFlow,
   useEdgesState,
@@ -18,8 +18,9 @@ const nodeTypes = {
 };
 
 
-export function NodeGraph({zoomPercent}) {
-  const setGraphNode = useBuilderStore((state)=> state.setGraphNodes);
+export function NodeGraph({ zoomPercent, setZoomPercent }: { zoomPercent: number, setZoomPercent: React.Dispatch<React.SetStateAction<number>> }) {
+  const [reactFlowInstance, setReactFlowInstance] = useState(null);
+  const setGraphNode = useBuilderStore((state) => state.setGraphNodes);
   const setSelectedNodeId = useBuilderStore((state) => state.setSelectedNodeId);
   const activeTool = useBuilderStore((state) => state.activeTool);
   const selectedAppId = useBuilderStore((state) => state.selectedAppId);
@@ -41,6 +42,12 @@ export function NodeGraph({zoomPercent}) {
     }
   }, [data, setNodes, setEdges]);
 
+  useEffect(() => {
+    if (reactFlowInstance) {
+      reactFlowInstance.zoomTo(zoomPercent / 100)
+    }
+  }, [zoomPercent, reactFlowInstance]);
+
   const handleNodeClick = (_: React.MouseEvent, node: ServiceNode) => {
     setSelectedNodeId(node.id);
   };
@@ -56,14 +63,17 @@ export function NodeGraph({zoomPercent}) {
   }
 
   return (
-    <div className="h-full w-full" style={{ transform: `scale(${zoomPercent / 100})` }}>
+    <div className="h-full w-full">
       <ReactFlow
-      
         className={
           activeTool === "hand"
             ? "hand-mode"
             : "pointer-mode"
         }
+        onInit={setReactFlowInstance}
+        onViewportChange={({ zoom }) => {
+          setZoomPercent(Math.round(zoom * 100));
+        }}
         nodes={nodes}
         edges={edges}
         nodeTypes={nodeTypes}

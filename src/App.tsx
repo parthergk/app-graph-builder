@@ -31,7 +31,7 @@ function App() {
           <div
             className=" w-full h-full transition-transform duration-300"
           >
-            <NodeGraph zoomPercent={zoomPercent} />
+            <NodeGraph zoomPercent={zoomPercent} setZoomPercent={setZoomPercent} />
           </div>
           <CanvasControls setZoomPercent={setZoomPercent} zoomPercent={zoomPercent} />
         </main>
