@@ -147,14 +147,6 @@ Built with a mobile-first philosophy using flexbox and grid layouts:
 
 ---
 
-## 🔮 Future Roadmap
-
-- [ ] **Persistent Database Middleware**: Hook up mock api actions to a local storage database or SQLite backend to persist configuration modifications permanently.
-- [ ] **Interactive Topology Builder**: Enable drag-and-drop actions from the left rail to add new components, and wire connection endpoints together via interactive handles.
-- [ ] **Automatic Auto-Layout Algorithms**: Integrate graph layout engines (such as *Dagre* or *Elk*) to automatically format scattered nodes into clean layered trees.
-- [ ] **Telemetry Monitoring Visualizations**: Integrate active CPU/Memory usage graphs directly inside the inspector using Recharts.
-
----
 
 ## 📦 Deployment Instructions
 

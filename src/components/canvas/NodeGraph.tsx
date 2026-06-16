@@ -41,7 +41,7 @@ export function NodeGraph({ zoomPercent, setZoomPercent }: { zoomPercent: number
       setNodes([]);
       setEdges([]);
     }
-  }, [data, setNodes, setEdges]);
+  }, [data, setNodes, setEdges, setGraphNode]);
 
   useEffect(() => {
   if (!reactFlowInstance) return;
