@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import RuntimeTab from './RuntimeTab';
 import ConfigurationTab from './ConfigurationTab';
 import { useBuilderStore } from '@/store/useBuilderStore';

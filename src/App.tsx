@@ -23,7 +23,7 @@ function App() {
         <LeftRail />
         
         <main
-          className="flex-1 relative flex flex-col justify-center items-center overflow-hidden"
+          className="flex-1 relative flex flex-col justify-center items-center overflow-hidden pb-16 md:pb-0"
           style={{
             backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px)',
             backgroundSize: '20px 20px',

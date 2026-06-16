@@ -14,7 +14,7 @@ export const TopBar: React.FC<TopBarProps> = ({
   onToggleTheme,
 }) => {
   return (
-    <header className="w-full h-16 bg-bg-panel border-b border-border-dark flex items-center justify-between px-6 select-none z-50">
+    <header className="w-full h-16 bg-bg-panel border-b border-border-dark flex items-center justify-between px-4 sm:px-6 select-none z-50">
       {/* Left side: Brand Logo and Title */}
       <div className="flex items-center gap-4">
         {/* Custom Node Graph Builder Logo */}
@@ -34,36 +34,36 @@ export const TopBar: React.FC<TopBarProps> = ({
               <circle cx="18" cy="18" r="3" fill="currentColor" />
             </svg>
           </div>
-          <span className="font-sans font-semibold text-[17px] text-white tracking-wide">
+          <span className="font-sans font-semibold text-[17px] text-white tracking-wide hidden sm:inline">
             App Graph Builder
           </span>
         </div>
       </div>
 
       {/* Right side: Action Buttons */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2.5 sm:gap-3">
         {/* Fit View Button */}
         <button
           onClick={onFitView}
-          className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-dark hover:bg-bg-active text-[13px] font-medium text-white transition-all duration-200 cursor-pointer"
+          className="flex items-center gap-2 px-2.5 py-2 sm:px-3 sm:py-1.5 rounded-lg border border-border-dark hover:bg-bg-active text-[13px] font-medium text-white transition-all duration-200 cursor-pointer"
         >
           <Maximize2 className="w-4 h-4 text-text-muted" />
-          <span>Fit View</span>
+          <span className="hidden sm:inline">Fit View</span>
         </button>
 
         {/* Theme Toggle Button with chevron */}
         <button
           onClick={onToggleTheme}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border-dark hover:bg-bg-active text-[13px] font-medium text-white transition-all duration-200 cursor-pointer"
+          className="flex items-center gap-1.5 px-2.5 py-2 sm:px-3 sm:py-1.5 rounded-lg border border-border-dark hover:bg-bg-active text-[13px] font-medium text-white transition-all duration-200 cursor-pointer"
         >
           <Moon className="w-4 h-4 text-text-muted" />
-          <ChevronRight className="w-3.5 h-3.5 text-text-muted" />
+          <ChevronRight className="w-3.5 h-3.5 text-text-muted hidden sm:inline" />
         </button>
 
        {/* Menu/Hamburger toggle */}
         <button
           onClick={onMenuToggle}
-          className="text-text-muted hover:text-white transition-colors duration-200 cursor-pointer lg:hidden"
+          className="text-text-muted hover:text-white p-2 transition-colors duration-200 cursor-pointer lg:hidden"
           aria-label="Toggle Menu"
         >
           <Menu className="w-6 h-6" />

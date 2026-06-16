@@ -4,6 +4,7 @@ import {
   useEdgesState,
   useNodesState,
   type Edge,
+  type ReactFlowInstance,
 } from "@xyflow/react";
 import type { ServiceNode } from "@/types/graph";
 import "@xyflow/react/dist/style.css";
@@ -19,7 +20,7 @@ const nodeTypes = {
 
 
 export function NodeGraph({ zoomPercent, setZoomPercent }: { zoomPercent: number, setZoomPercent: React.Dispatch<React.SetStateAction<number>> }) {
-  const [reactFlowInstance, setReactFlowInstance] = useState(null);
+  const [reactFlowInstance, setReactFlowInstance] = useState<ReactFlowInstance<ServiceNode, Edge> | null>(null);
   const setGraphNode = useBuilderStore((state) => state.setGraphNodes);
   const setSelectedNodeId = useBuilderStore((state) => state.setSelectedNodeId);
   const activeTool = useBuilderStore((state) => state.activeTool);
@@ -67,7 +68,7 @@ export function NodeGraph({ zoomPercent, setZoomPercent }: { zoomPercent: number
   }
 
   return (
-    <div className=" ">
+    <div className="w-full h-full">
       <ReactFlow
         className={
           activeTool === "hand"
