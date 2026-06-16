@@ -14,9 +14,24 @@ export const NodeInspector = () => {
 
   // Status badge classes
   const statusColors = {
-    healthy: { text: 'text-emerald-600 dark:text-emerald-400', border: 'border-emerald-500/25', bg: 'bg-emerald-500/10 dark:bg-emerald-500/5', dot: 'bg-emerald-500' },
-    degraded: { text: 'text-amber-600 dark:text-amber-400', border: 'border-amber-500/25', bg: 'bg-amber-500/10 dark:bg-amber-500/5', dot: 'bg-amber-500' },
-    down: { text: 'text-rose-600 dark:text-rose-400', border: 'border-rose-500/25', bg: 'bg-rose-500/10 dark:bg-rose-500/5', dot: 'bg-rose-500' },
+    healthy: { 
+      text: 'text-emerald-700 dark:text-emerald-400', 
+      border: 'border-emerald-200 dark:border-emerald-500/20', 
+      bg: 'bg-emerald-50 dark:bg-emerald-500/10', 
+      dot: 'bg-emerald-500' 
+    },
+    degraded: { 
+      text: 'text-amber-700 dark:text-amber-400', 
+      border: 'border-amber-200 dark:border-amber-500/20', 
+      bg: 'bg-amber-50 dark:bg-amber-500/10', 
+      dot: 'bg-amber-500' 
+    },
+    down: { 
+      text: 'text-rose-700 dark:text-rose-400', 
+      border: 'border-rose-200 dark:border-rose-500/20', 
+      bg: 'bg-rose-50 dark:bg-rose-500/10', 
+      dot: 'bg-rose-500' 
+    },
   };
 
   if (!selectedNode) {
@@ -34,7 +49,7 @@ export const NodeInspector = () => {
       {/* Panel Header */}
       <div className=" flex flex-col gap-1 ">
         <div className="flex items-center justify-between">
-          <h2 className="text-white text-base font-semibold font-sans">
+          <h2 className="text-foreground text-base font-semibold font-sans">
             {selectedNode.data.label}
           </h2>
           {/* Status Badge */}
@@ -55,8 +70,8 @@ export const NodeInspector = () => {
         <button
           onClick={() => setActiveTab('config')}
           className={`flex-1 py-3 text-center font-medium cursor-pointer transition-all ${activeTab === 'config'
-              ? 'text-white border-b-2 border-white'
-              : 'text-text-muted hover:text-white'
+            ? 'text-primary border-b-2 border-primary dark:text-white dark:border-white'
+            : 'text-text-muted hover:text-foreground dark:hover:text-white'
             }`}
         >
           Config
@@ -64,8 +79,8 @@ export const NodeInspector = () => {
         <button
           onClick={() => setActiveTab('runtime')}
           className={`flex-1 py-3 text-center font-medium cursor-pointer transition-all ${activeTab === 'runtime'
-              ? 'text-white border-b-2 border-white'
-              : 'text-text-muted hover:text-white'
+            ? 'text-primary border-b-2 border-primary dark:text-white dark:border-white'
+            : 'text-text-muted hover:text-foreground dark:hover:text-white'
             }`}
         >
           Runtime

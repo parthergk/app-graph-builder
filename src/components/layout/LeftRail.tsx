@@ -22,11 +22,10 @@ export const LeftRail = () => {
         {/* Home Icon Container */}
         <button
           onClick={() => setActiveNav('home')}
-          className={`w-11 h-11 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-all duration-200 cursor-pointer ${
-            activeNav === 'home'
-              ? 'bg-bg-active text-foreground border border-border-dark'
-              : 'text-text-muted hover:text-foreground hover:bg-bg-active/50'
-          }`}
+          className={`w-11 h-11 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-all duration-200 cursor-pointer ${activeNav === 'home'
+              ? 'bg-primary text-primary-foreground shadow-sm shadow-primary/10 dark:bg-bg-active dark:text-white dark:border dark:border-[#2d2d34]'
+              : 'text-text-muted hover:text-foreground hover:bg-bg-active dark:hover:text-white dark:hover:bg-bg-active/50'
+            }`}
           aria-label="Home"
         >
           <Home className="w-5 h-5" />
@@ -35,11 +34,10 @@ export const LeftRail = () => {
         {/* Graph Icon */}
         <button
           onClick={() => setActiveNav('graph')}
-          className={`w-11 h-11 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-all duration-200 cursor-pointer ${
-            activeNav === 'graph'
-              ? 'bg-bg-active text-foreground border border-border-dark'
-              : 'text-text-muted hover:text-foreground hover:bg-bg-active/50'
-          }`}
+          className={`w-11 h-11 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-all duration-200 cursor-pointer ${activeNav === 'graph'
+              ? 'bg-primary text-primary-foreground shadow-sm shadow-primary/10 dark:bg-bg-active dark:text-white dark:border dark:border-[#2d2d34]'
+              : 'text-text-muted hover:text-foreground hover:bg-bg-active dark:hover:text-white dark:hover:bg-bg-active/50'
+            }`}
           aria-label="Network Graph"
         >
           <Network className="w-5 h-5" />
@@ -48,11 +46,10 @@ export const LeftRail = () => {
         {/* Package Icon */}
         <button
           onClick={() => setActiveNav('package')}
-          className={`w-11 h-11 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-all duration-200 cursor-pointer ${
-            activeNav === 'package'
-              ? 'bg-bg-active text-foreground border border-border-dark'
-              : 'text-text-muted hover:text-foreground hover:bg-bg-active/50'
-          }`}
+          className={`w-11 h-11 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-all duration-200 cursor-pointer ${activeNav === 'package'
+              ? 'bg-primary text-primary-foreground shadow-sm shadow-primary/10 dark:bg-bg-active dark:text-white dark:border dark:border-[#2d2d34]'
+              : 'text-text-muted hover:text-foreground hover:bg-bg-active dark:hover:text-white dark:hover:bg-bg-active/50'
+            }`}
           aria-label="Packages"
         >
           <Box className="w-5 h-5" />
@@ -61,11 +58,10 @@ export const LeftRail = () => {
         {/* Database Icon */}
         <button
           onClick={() => setActiveNav('database')}
-          className={`w-11 h-11 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-all duration-200 cursor-pointer ${
-            activeNav === 'database'
-              ? 'bg-bg-active text-foreground border border-border-dark'
-              : 'text-text-muted hover:text-foreground hover:bg-bg-active/50'
-          }`}
+          className={`w-11 h-11 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-all duration-200 cursor-pointer ${activeNav === 'database'
+              ? 'bg-primary text-primary-foreground shadow-sm shadow-primary/10 dark:bg-bg-active dark:text-white dark:border dark:border-[#2d2d34]'
+              : 'text-text-muted hover:text-foreground hover:bg-bg-active dark:hover:text-white dark:hover:bg-bg-active/50'
+            }`}
           aria-label="Database"
         >
           <Database className="w-5 h-5" />
@@ -74,11 +70,10 @@ export const LeftRail = () => {
         {/* Line Chart Icon */}
         <button
           onClick={() => setActiveNav('analytics')}
-          className={`w-11 h-11 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-all duration-200 cursor-pointer ${
-            activeNav === 'analytics'
-              ? 'bg-bg-active text-foreground border border-border-dark'
-              : 'text-text-muted hover:text-foreground hover:bg-bg-active/50'
-          }`}
+          className={`w-11 h-11 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-all duration-200 cursor-pointer ${activeNav === 'analytics'
+              ? 'bg-primary text-primary-foreground shadow-sm shadow-primary/10 dark:bg-bg-active dark:text-white dark:border dark:border-[#2d2d34]'
+              : 'text-text-muted hover:text-foreground hover:bg-bg-active dark:hover:text-white dark:hover:bg-bg-active/50'
+            }`}
           aria-label="Analytics"
         >
           <LineChart className="w-5 h-5" />
@@ -87,11 +82,10 @@ export const LeftRail = () => {
         {/* Settings Icon */}
         <button
           onClick={() => setActiveNav('settings')}
-          className={`w-11 h-11 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-all duration-200 cursor-pointer ${
-            activeNav === 'settings'
-              ? 'bg-bg-active text-foreground border border-border-dark'
-              : 'text-text-muted hover:text-foreground hover:bg-bg-active/50'
-          }`}
+          className={`w-11 h-11 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-all duration-200 cursor-pointer ${activeNav === 'settings'
+              ? 'bg-primary text-primary-foreground shadow-sm shadow-primary/10 dark:bg-bg-active dark:text-white dark:border dark:border-[#2d2d34]'
+              : 'text-text-muted hover:text-foreground hover:bg-bg-active dark:hover:text-white dark:hover:bg-bg-active/50'
+            }`}
           aria-label="Settings"
         >
           <Settings className="w-5 h-5" />
@@ -100,11 +94,10 @@ export const LeftRail = () => {
         {/* Help Icon (Visible in row on mobile, separate container on desktop) */}
         <button
           onClick={() => setActiveNav('help')}
-          className={`w-11 h-11 md:w-10 md:h-10 rounded-xl flex md:hidden items-center justify-center transition-all duration-200 cursor-pointer ${
-            activeNav === 'help'
-              ? 'bg-bg-active text-foreground border border-border-dark'
-              : 'text-text-muted hover:text-foreground hover:bg-bg-active/50'
-          }`}
+          className={`w-11 h-11 md:w-10 md:h-10 rounded-xl flex md:hidden items-center justify-center transition-all duration-200 cursor-pointer ${activeNav === 'help'
+              ? 'bg-primary text-primary-foreground shadow-sm shadow-primary/10 dark:bg-bg-active dark:text-white dark:border dark:border-[#2d2d34]'
+              : 'text-text-muted hover:text-foreground hover:bg-bg-active dark:hover:text-white dark:hover:bg-bg-active/50'
+            }`}
           aria-label="Help"
         >
           <HelpCircle className="w-5 h-5" />
@@ -114,11 +107,10 @@ export const LeftRail = () => {
       {/* Bottom Help Icon (Visible only on desktop) */}
       <button
         onClick={() => setActiveNav('help')}
-        className={`w-10 h-10 rounded-xl hidden md:flex items-center justify-center transition-all duration-200 cursor-pointer ${
-          activeNav === 'help'
-            ? 'bg-bg-active text-foreground border border-border-dark'
-            : 'text-text-muted hover:text-foreground hover:bg-bg-active/50'
-        }`}
+        className={`w-10 h-10 rounded-xl hidden md:flex items-center justify-center transition-all duration-200 cursor-pointer ${activeNav === 'help'
+            ? 'bg-primary text-primary-foreground shadow-sm shadow-primary/10 dark:bg-bg-active dark:text-white dark:border dark:border-[#2d2d34]'
+            : 'text-text-muted hover:text-foreground hover:bg-bg-active dark:hover:text-white dark:hover:bg-bg-active/50'
+          }`}
         aria-label="Help"
       >
         <HelpCircle className="w-5 h-5" />

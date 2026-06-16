@@ -36,9 +36,6 @@
 
   /* Custom subtle background glow effect */
   body {
-    background-image:
-      radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, rgba(244, 63, 94, 0.05) 0px, transparent 50%);
     @apply bg-background text-foreground;
   }
 
@@ -175,12 +172,6 @@
   --color-chart-4: var(--chart-4);
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
-  --color-bg-dark: var(--bg-dark);
-  --color-bg-panel: var(--bg-panel);
-  --color-bg-active: var(--bg-active);
-  --color-border-dark: var(--border-dark);
-  --color-text-muted: var(--text-muted);
-  --color-bg-rail: var(--bg-rail);
   --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
@@ -210,48 +201,48 @@
 }
 
 :root {
-  --bg-dark: #f8f9fa;
+  --bg-dark: #f8fafc;
   --bg-panel: #ffffff;
-  --bg-active: #f3f4f6;
-  --border-dark: #e4e4e7;
-  --text-muted: #71717a;
-  --grid-dots: rgba(9, 9, 11, 0.05);
+  --bg-active: #f1f5f9;
+  --border-dark: #e2e8f0;
+  --text-muted: #64748b;
+  --grid-dots: rgba(148, 163, 184, 0.08);
   --bg-rail: #ffffff;
   --edge-color: #cbd5e1;
-  --edge-selected-color: oklch(0.205 0 0);
+  --edge-selected-color: oklch(0.18 0.015 240);
 
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: oklch(0.99 0.005 240);
+  --foreground: oklch(0.18 0.015 240);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.18 0.015 240);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --popover-foreground: oklch(0.18 0.015 240);
+  --primary: oklch(0.18 0.015 240);
+  --primary-foreground: oklch(0.99 0.005 240);
+  --secondary: oklch(0.96 0.01 240);
+  --secondary-foreground: oklch(0.18 0.015 240);
+  --muted: oklch(0.96 0.01 240);
+  --muted-foreground: oklch(0.45 0.015 240);
+  --accent: oklch(0.96 0.01 240);
+  --accent-foreground: oklch(0.18 0.015 240);
+  --destructive: oklch(0.55 0.18 25);
+  --border: oklch(0.92 0.01 240);
+  --input: oklch(0.92 0.01 240);
+  --ring: oklch(0.2 0.01 240 / 20%);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: oklch(0.99 0.005 240);
+  --sidebar-foreground: oklch(0.18 0.015 240);
+  --sidebar-primary: oklch(0.18 0.015 240);
+  --sidebar-primary-foreground: oklch(0.99 0.005 240);
+  --sidebar-accent: oklch(0.96 0.01 240);
+  --sidebar-accent-foreground: oklch(0.18 0.015 240);
+  --sidebar-border: oklch(0.92 0.01 240);
+  --sidebar-ring: oklch(0.2 0.01 240 / 20%);
 }
 
 .dark {
@@ -295,36 +286,5 @@
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
-}
-
-/* Premium Custom ReactFlow Visual Overrides */
-.react-flow__edge-path {
-  stroke: var(--edge-color) !important;
-  stroke-width: 2px !important;
-  transition: stroke 0.15s ease, stroke-width 0.15s ease;
-}
-
-.react-flow__edge.selected .react-flow__edge-path {
-  stroke: var(--edge-selected-color) !important;
-  stroke-width: 3px !important;
-}
-
-.react-flow__handle {
-  background: var(--primary) !important;
-  border: 2px solid var(--bg-panel) !important;
-  width: 8px !important;
-  height: 8px !important;
-  border-radius: 9999px !important;
-  transition: transform 0.15s ease, background-color 0.15s ease;
-}
-
-.react-flow__handle:hover {
-  transform: scale(1.25);
-}
-
-.react-flow__attribution {
-  background: transparent !important;
-  color: var(--text-muted) !important;
-  font-size: 9px !important;
-  opacity: 0.5;
+  --sidebar-ring: oklch(0.556 0 0);
 }

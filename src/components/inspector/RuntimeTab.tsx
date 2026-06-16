@@ -10,7 +10,7 @@ export default function RuntimeTab({
 }: RuntimeTabProps) {
   return (
     <div className="space-y-4">
-      <div className="rounded-xl border border-border-dark bg-bg-dark/50 dark:bg-black/40 p-4">
+      <div className="rounded-xl border border-border-dark bg-bg-active/50 dark:bg-[#050507] p-4">
         <div className="flex items-center gap-2 mb-4">
           <Activity className="w-4 h-4" />
           <span className="text-sm font-medium">
