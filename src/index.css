@@ -9,11 +9,11 @@
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
 
-  --color-bg-dark: #08080a;
-  --color-bg-panel: #0d0d0f;
-  --color-bg-active: #18181b;
-  --color-border-dark: #1f1f23;
-  --color-text-muted: #8e9196;
+  --color-bg-dark: var(--bg-dark);
+  --color-bg-panel: var(--bg-panel);
+  --color-bg-active: var(--bg-active);
+  --color-border-dark: var(--border-dark);
+  --color-text-muted: var(--text-muted);
 }
 
 @layer base {
@@ -187,6 +187,13 @@
 }
 
 :root {
+  --bg-dark: #f8f9fa;
+  --bg-panel: #ffffff;
+  --bg-active: #f3f4f6;
+  --border-dark: #e4e4e7;
+  --text-muted: #71717a;
+  --grid-dots: rgba(9, 9, 11, 0.05);
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -222,6 +229,13 @@
 }
 
 .dark {
+  --bg-dark: #08080a;
+  --bg-panel: #0d0d0f;
+  --bg-active: #18181b;
+  --border-dark: #1f1f23;
+  --text-muted: #8e9196;
+  --grid-dots: rgba(255, 255, 255, 0.05);
+
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);

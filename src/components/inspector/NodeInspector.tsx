@@ -34,7 +34,7 @@ export const NodeInspector = () => {
       {/* Panel Header */}
       <div className=" flex flex-col gap-1 ">
         <div className="flex items-center justify-between">
-          <h2 className="text-white text-base font-semibold font-sans">
+          <h2 className="text-foreground text-base font-semibold font-sans">
             {selectedNode.data.label}
           </h2>
           {/* Status Badge */}
@@ -56,8 +56,8 @@ export const NodeInspector = () => {
           onClick={() => setActiveTab('config')}
           className={`flex-1 py-3 text-center font-medium cursor-pointer transition-all ${
             activeTab === 'config'
-              ? 'text-white border-b-2 border-white'
-              : 'text-text-muted hover:text-white'
+              ? 'text-foreground border-b-2 border-foreground'
+              : 'text-text-muted hover:text-foreground'
           }`}
         >
           Config
@@ -66,8 +66,8 @@ export const NodeInspector = () => {
           onClick={() => setActiveTab('runtime')}
           className={`flex-1 py-3 text-center font-medium cursor-pointer transition-all ${
             activeTab === 'runtime'
-              ? 'text-white border-b-2 border-white'
-              : 'text-text-muted hover:text-white'
+              ? 'text-foreground border-b-2 border-foreground'
+              : 'text-text-muted hover:text-foreground'
           }`}
         >
           Runtime
